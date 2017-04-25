@@ -1,0 +1,811 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/davidmarkclements/cute-stack#readme"
+
+    >cute-stack (v1.4.3)</a>
+</h1>
+<h4>## Cute up your Node stack traces</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cute-stack">module cute-stack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.cute-stack">
+            function <span class="apidocSignatureSpan"></span>cute-stack
+            <span class="apidocSignatureSpan">(type, stackSize, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.noStack">
+            function <span class="apidocSignatureSpan">cute-stack.</span>noStack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.json">
+            function <span class="apidocSignatureSpan">cute-stack.</span>ui.json
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.pretty-json">
+            function <span class="apidocSignatureSpan">cute-stack.</span>ui.pretty-json
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.table">
+            function <span class="apidocSignatureSpan">cute-stack.</span>ui.table
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.tree">
+            function <span class="apidocSignatureSpan">cute-stack.</span>ui.tree
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.uncute">
+            function <span class="apidocSignatureSpan">cute-stack.</span>uncute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cute-stack.</span>ui</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cute-stack.ui">module cute-stack.ui</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.default">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>default
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.json">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>json
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.pretty">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>pretty
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.pretty-json">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>pretty-json
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.table">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>table
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.tree">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>tree
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cute-stack.ui.json">module cute-stack.ui.json</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.json.json">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>json
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.json.print">
+            function <span class="apidocSignatureSpan">cute-stack.ui.json.</span>print
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cute-stack.ui.pretty-json">module cute-stack.ui.pretty-json</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.pretty-json.pretty-json">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>pretty-json
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.pretty-json.print">
+            function <span class="apidocSignatureSpan">cute-stack.ui.pretty-json.</span>print
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cute-stack.ui.table">module cute-stack.ui.table</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.table.table">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>table
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.table.init">
+            function <span class="apidocSignatureSpan">cute-stack.ui.table.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.table.print">
+            function <span class="apidocSignatureSpan">cute-stack.ui.table.</span>print
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cute-stack.ui.tree">module cute-stack.ui.tree</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.tree.tree">
+            function <span class="apidocSignatureSpan">cute-stack.ui.</span>tree
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cute-stack.ui.tree.print">
+            function <span class="apidocSignatureSpan">cute-stack.ui.tree.</span>print
+            <span class="apidocSignatureSpan">(frames)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cute-stack" id="apidoc.module.cute-stack">module cute-stack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.cute-stack" id="apidoc.element.cute-stack.cute-stack">
+        function <span class="apidocSignatureSpan"></span>cute-stack
+        <span class="apidocSignatureSpan">(type, stackSize, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cute(type, stackSize, opts) {
+  opts = opts || {}
+  if (typeof type === &#x27;number&#x27;) {
+    stackSize = type;
+    type = null;
+  }
+  if (typeof stackSize === &#x27;number&#x27;) {
+    Error.stackTraceLimit = stackSize;
+  }
+  if (opts.emulated) {
+    Error.stackTraceLimit += 7;
+  }
+  if (typeof type !== &#x27;function&#x27;) {
+    type = cute.ui[type] || cute.ui.default;
+  }
+  if (type.init) { type.init(); }
+
+  var filter = type.filter ? type.filter : function (x) { return x; };
+
+  function details(frame) {
+    var fn = frame.getFunction();
+    var sig = fn ?
+      ((fn+&#x27;&#x27;).split(&#x27;{&#x27;)[0].trim() + &#x27; { [body] }&#x27;) :
+      findSig(frame);
+
+    return {
+      file: frame.getFileName()
+        .replace(process.cwd(), &#x27;.&#x27;)
+        .replace(/\/node_modules\//g, &#x27;♦&#x27;),
+      line: frame.getLineNumber(),
+      column: frame.getColumnNumber(),
+      name: frame.getFunctionName(),
+      meth: frame.getMethodName(),
+      sig: sig,
+      id: function () {
+        return this.name || this.meth || this.sig;
+      }
+    }
+  }
+
+  // https://code.google.com/p/v8-wiki/wiki/JavaScriptStackTraceApi
+  Error.prepareStackTrace = function (error, stack) {
+    if (opts.emulated) { stack = strip(stack); }
+
+    var text = (error+&#x27;&#x27;).bgRed.white
+      + &#x27;\n\n&#x27; + (type.print||join)(
+        stack.map(details).filter(filter).map(type)
+      );
+
+    return text;
+  }
+  return cute;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.noStack" id="apidoc.element.cute-stack.noStack">
+        function <span class="apidocSignatureSpan">cute-stack.</span>noStack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noStack = function () { cute(null, 0); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cute.uncute();
+```
+Removes alterations to stack traces
+
+
+### noStack
+```javascript
+require(&#x27;cute-stack&#x27;).<span class="apidocCodeKeywordSpan">noStack</span>();
+```
+
+Disables stack traces
+
+## Plugins
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.json" id="apidoc.element.cute-stack.ui.json">
+        function <span class="apidocSignatureSpan">cute-stack.</span>ui.json
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ui.json = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.pretty-json" id="apidoc.element.cute-stack.ui.pretty-json">
+        function <span class="apidocSignatureSpan">cute-stack.</span>ui.pretty-json
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ui.pretty-json = function (frame) {
+  return JSON.stringify(frame, 0, 2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.table" id="apidoc.element.cute-stack.ui.table">
+        function <span class="apidocSignatureSpan">cute-stack.</span>ui.table
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function table(frame) {
+  var file = (frame.file.length &#x3e; 18) ?
+    &#x27;…&#x27; + frame.file.substring(-16) :
+    frame.file;
+
+  table._.push([
+    file, frame.line, frame.column, frame.id()
+  ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.tree" id="apidoc.element.cute-stack.ui.tree">
+        function <span class="apidocSignatureSpan">cute-stack.</span>ui.tree
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tree(frame) {
+  return {
+    file: frame.file,
+    line: frame.line,
+    column: frame.column,
+    id: frame.id()
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.uncute" id="apidoc.element.cute-stack.uncute">
+        function <span class="apidocSignatureSpan">cute-stack.</span>uncute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uncute = function () {
+  Error.stackTraceLimit = 10;
+  Error.prepareStackTrace = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+require(&#x27;cute-stack&#x27;)(&#x27;pretty&#x27;, Infinity)
+```
+
+### uncute
+
+```javascript
+var cute = require(&#x27;cute-stack&#x27;)();
+cute.<span class="apidocCodeKeywordSpan">uncute</span>();
+```
+Removes alterations to stack traces
+
+
+### noStack
+```javascript
+require(&#x27;cute-stack&#x27;).noStack();
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cute-stack.ui" id="apidoc.module.cute-stack.ui">module cute-stack.ui</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.default" id="apidoc.element.cute-stack.ui.default">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>default
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pretty(frame) {
+  return [
+    frame.file.cyan,
+    (&#x27; &#x27; + frame.line + &#x27;,&#x27; + frame.column + &#x27; &#x27;).bgYellow.black,
+    (&#x27; &#x27; + (frame.id()) + &#x27; &#x27;).gray
+    ].join(&#x27; &#x27;) + &#x27;\n&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.json" id="apidoc.element.cute-stack.ui.json">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>json
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">json = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.pretty" id="apidoc.element.cute-stack.ui.pretty">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>pretty
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pretty(frame) {
+  return [
+    frame.file.cyan,
+    (&#x27; &#x27; + frame.line + &#x27;,&#x27; + frame.column + &#x27; &#x27;).bgYellow.black,
+    (&#x27; &#x27; + (frame.id()) + &#x27; &#x27;).gray
+    ].join(&#x27; &#x27;) + &#x27;\n&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.pretty-json" id="apidoc.element.cute-stack.ui.pretty-json">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>pretty-json
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pretty-json = function (frame) {
+  return JSON.stringify(frame, 0, 2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.table" id="apidoc.element.cute-stack.ui.table">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>table
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function table(frame) {
+  var file = (frame.file.length &#x3e; 18) ?
+    &#x27;…&#x27; + frame.file.substring(-16) :
+    frame.file;
+
+  table._.push([
+    file, frame.line, frame.column, frame.id()
+  ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.tree" id="apidoc.element.cute-stack.ui.tree">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>tree
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tree(frame) {
+  return {
+    file: frame.file,
+    line: frame.line,
+    column: frame.column,
+    id: frame.id()
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cute-stack.ui.json" id="apidoc.module.cute-stack.ui.json">module cute-stack.ui.json</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.json.json" id="apidoc.element.cute-stack.ui.json.json">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>json
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">json = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.json.print" id="apidoc.element.cute-stack.ui.json.print">
+        function <span class="apidocSignatureSpan">cute-stack.ui.json.</span>print
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (data) {
+  return &#x27;[&#x27;+data+&#x27;]&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cute-stack.ui.pretty-json" id="apidoc.module.cute-stack.ui.pretty-json">module cute-stack.ui.pretty-json</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.pretty-json.pretty-json" id="apidoc.element.cute-stack.ui.pretty-json.pretty-json">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>pretty-json
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pretty-json = function (frame) {
+  return JSON.stringify(frame, 0, 2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.pretty-json.print" id="apidoc.element.cute-stack.ui.pretty-json.print">
+        function <span class="apidocSignatureSpan">cute-stack.ui.pretty-json.</span>print
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (data) {
+  return &#x27;[&#x27;+data+&#x27;]&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cute-stack.ui.table" id="apidoc.module.cute-stack.ui.table">module cute-stack.ui.table</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.table.table" id="apidoc.element.cute-stack.ui.table.table">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>table
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function table(frame) {
+  var file = (frame.file.length &#x3e; 18) ?
+    &#x27;…&#x27; + frame.file.substring(-16) :
+    frame.file;
+
+  table._.push([
+    file, frame.line, frame.column, frame.id()
+  ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.table.init" id="apidoc.element.cute-stack.ui.table.init">
+        function <span class="apidocSignatureSpan">cute-stack.ui.table.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+
+  table._ = new Table({
+    head: [&#x27;file&#x27;, &#x27;line&#x27;, &#x27;col&#x27;, &#x27;name/sig&#x27;],
+    colWidths: [20, 8, 6, 46]
+
+  })
+
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+if (opts.emulated) {
+  Error.stackTraceLimit += 7;
+}
+if (typeof type !== &#x27;function&#x27;) {
+  type = cute.ui[type] || cute.ui.default;
+}
+if (type.init) { type.<span class="apidocCodeKeywordSpan">init</span>(); }
+
+var filter = type.filter ? type.filter : function (x) { return x; };
+
+function details(frame) {
+  var fn = frame.getFunction();
+  var sig = fn ?
+    ((fn+&#x27;&#x27;).split(&#x27;{&#x27;)[0].trim() + &#x27; { [body] }&#x27;) :
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.table.print" id="apidoc.element.cute-stack.ui.table.print">
+        function <span class="apidocSignatureSpan">cute-stack.ui.table.</span>print
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function () {
+  var t = table._ + &#x27;&#x27;;
+  table._ = null;
+  return t;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cute-stack.ui.tree" id="apidoc.module.cute-stack.ui.tree">module cute-stack.ui.tree</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.tree.tree" id="apidoc.element.cute-stack.ui.tree.tree">
+        function <span class="apidocSignatureSpan">cute-stack.ui.</span>tree
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tree(frame) {
+  return {
+    file: frame.file,
+    line: frame.line,
+    column: frame.column,
+    id: frame.id()
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cute-stack.ui.tree.print" id="apidoc.element.cute-stack.ui.tree.print">
+        function <span class="apidocSignatureSpan">cute-stack.ui.tree.</span>print
+        <span class="apidocSignatureSpan">(frames)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function treePrint(frames) {
+  if (!frames.length) {
+    return;
+  }
+
+  frames.reduce(function (prev, curr) {
+    if (prev !== curr) {
+      prev.caller = curr;
+    }
+    return curr;
+  }, frames[0]);
+
+  return treeify.asTree(frames[0], true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
